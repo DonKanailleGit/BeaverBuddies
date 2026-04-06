@@ -9,6 +9,7 @@ using Timberborn.AutomationBuildingsUI;
 using Timberborn.AutomationUI;
 using Timberborn.BaseComponentSystem;
 using Timberborn.FireworkSystem;
+using Timberborn.WaterBuildings;
 using UnityEngine.UIElements;
 
 namespace BeaverBuddies.Events
@@ -152,6 +153,28 @@ namespace BeaverBuddies.Events
                 (typeof(Timer), nameof(Timer.SetResetInput)),
                 (typeof(WeatherStation), nameof(WeatherStation.SetEarlyActivationHours)),
                 (typeof(WeatherStation), nameof(WeatherStation.SetMode)),
+                // Valve (Throttling Valve): syncs flow rate, target height, state, and reaction speed
+                (typeof(Valve), nameof(Valve.SetReactionSpeedAndSynchronize)),
+                (typeof(Valve), nameof(Valve.SetStateAndSynchronize)),
+                (typeof(Valve), nameof(Valve.SetHeightAndSynchronize)),
+                (typeof(Valve), nameof(Valve.SetAutomationHeightAndSynchronize)),
+                (typeof(Valve), nameof(Valve.SetTargetHeightAndSynchronize)),
+                (typeof(Valve), nameof(Valve.SetAutomationTargetHeightAndSynchronize)),
+                (typeof(Valve), nameof(Valve.SetTargetHeightEnabledAndSynchronize)),
+                (typeof(Valve), nameof(Valve.SetAutomationTargetHeightEnabledAndSynchronize)),
+                (typeof(Valve), nameof(Valve.SetOutflowLimitAndSynchronize)),
+                (typeof(Valve), nameof(Valve.SetAutomationOutflowLimitAndSynchronize)),
+                (typeof(Valve), nameof(Valve.SetOutflowLimitEnabledAndSynchronize)),
+                (typeof(Valve), nameof(Valve.SetAutomationOutflowLimitEnabledAndSynchronize)),
+                // FillValve: syncs target depth and outflow limit settings
+                (typeof(FillValve), nameof(FillValve.SetTargetHeightAndSynchronize)),
+                (typeof(FillValve), nameof(FillValve.SetAutomationTargetHeightAndSynchronize)),
+                (typeof(FillValve), nameof(FillValve.SetTargetHeightEnabledAndSynchronize)),
+                (typeof(FillValve), nameof(FillValve.SetAutomationTargetHeightEnabledAndSynchronize)),
+                (typeof(FillValve), nameof(FillValve.SetOutflowLimitAndSynchronize)),
+                (typeof(FillValve), nameof(FillValve.SetAutomationOutflowLimitAndSynchronize)),
+                (typeof(FillValve), nameof(FillValve.SetOutflowLimitEnabledAndSynchronize)),
+                (typeof(FillValve), nameof(FillValve.SetAutomationOutflowLimitEnabledAndSynchronize)),
                 // Note: this intentionally omits the HTTPApi system because, well, that
                 // doesn't really make sense in multiplayer... at the very least it'd be
                 // a larger project.
